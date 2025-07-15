@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import Footer from "../../components/footer/Footer";
 
@@ -17,13 +18,14 @@ const Aboutpage = () => {
             Vision
           </h2>
           <h2 className="text-xl md:text-[15px] inline-block max-w-3xl font-semibold pt-5">
-            Offering utmost value to our clients with DIfferent & Better
+            Offering utmost value to our clients with Different & Better
             standards of luxury real estate <br /> in Lagos, Abuja and around
             the World
           </h2>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center container mx-auto  p-14 md:px-20 lg:px-32 w-full overflow-hidden  ">
+
+      <div className="flex flex-col items-center justify-center container mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden">
         <div className="flex flex-col mt-15 md:flex-row items-center md:items-start md:gap-20">
           <img
             src={assets.brand_img}
@@ -38,11 +40,11 @@ const Aboutpage = () => {
               </div>
               <div>
                 <p className="text-4xl font-medium text-gray-800">12+</p>
-                <p>Projects Completed </p>
+                <p>Projects Completed</p>
               </div>
               <div>
                 <p className="text-4xl font-medium text-gray-800">20+</p>
-                <p>Mn.sq. ft. Delievered</p>
+                <p>Mn.sq. ft. Delivered</p>
               </div>
               <div>
                 <p className="text-4xl font-medium text-gray-800">25+</p>
@@ -55,13 +57,19 @@ const Aboutpage = () => {
               eos nulla. Doloremque reiciendis a accusantium reprehenderit
               sapiente velit dolor.
             </p>
-            <button className="bg-blue-600 text-white px-2 py-1 rounded ">
+
+            {/* ✅ Link styled as a button */}
+            <Link
+              to="/contact"
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+            >
               Learn More
-            </button>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="container mx-auto flex flex-col md:flex-row justify-between gap-6">
+
+      <div className="container mx-auto flex flex-col md:flex-row justify-between gap-6 px-4 md:px-20 lg:px-32">
         <div className="flex-1">
           <h1 className="text-xl font-semibold mb-2">Real Estate</h1>
           <p>
@@ -92,6 +100,17 @@ const Aboutpage = () => {
           </p>
         </div>
       </div>
+
+      {/* ✅ Back to Home Link */}
+      <div className="text-center my-12">
+        <Link
+          to="/"
+          className="inline-block bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition"
+        >
+          ← Back to Home
+        </Link>
+      </div>
+
       <div>
         <Footer />
       </div>

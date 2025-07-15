@@ -1,24 +1,30 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
     <div>
+      {/* Hero Section */}
       <div
-        className="bg-cover bg-center flex items-center overflow-hidden h-[150px] w-full px-40 mt-25"
+        className="bg-cover bg-center flex items-center h-[150px] w-full px-6 md:px-40"
         style={{
           backgroundImage: "url(/header_img.png)",
         }}
       >
-        <div className="text-left text-white ">
-          <div className="text-base font-medium ">
-            <a className="mr-2">Home</a>
+        <div className="text-left text-white">
+          <div className="text-base font-medium">
+            <Link to="/" className="mr-2 hover:underline">
+              Home
+            </Link>
             <span className="mr-2">{">"}</span>
-            <a>Contact</a>
+            <span>Contact</span>
           </div>
           <p className="text-1xl font-bold pt-3">Contact</p>
         </div>
       </div>
+
+      {/* Contact Section */}
       <div className="w-full py-10 bg-gray-100">
         <div className="container mx-auto flex flex-col md:flex-row md:gap-10">
           {/* Left: Contact Info */}
@@ -33,15 +39,9 @@ const Contact = () => {
             <div>
               <p className="mb-2 font-semibold">Follow us:</p>
               <div className="flex space-x-4">
-                <a href="#">
-                  <i className="fab fa-facebook-f"></i> Facebook
-                </a>
-                <a href="#">
-                  <i className="fab fa-twitter"></i> Twitter
-                </a>
-                <a href="#">
-                  <i className="fab fa-instagram"></i> Instagram
-                </a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
               </div>
             </div>
           </div>
@@ -82,9 +82,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <div>
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 };

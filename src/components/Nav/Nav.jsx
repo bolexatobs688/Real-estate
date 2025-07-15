@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { assets } from "../../assets/assets";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [showNav, setShowNav] = useState(false);
@@ -34,30 +35,34 @@ const Nav = () => {
 
           {/* Navigation Links */}
           <nav className="flex flex-col items-start px-10 space-y-4 text-lg font-medium">
-            <a
+            <NavLink
+              to="/about"
               href="#about"
               className="text-gray-700 hover:text-red-600 px-6 py-3 transition-colors duration-200 rounded-full"
             >
               About
-            </a>
-            <a
+            </NavLink>
+            <NavLink
+              to="/blog"
               href="#blog"
               className="text-gray-700 hover:text-red-600 px-6 py-3 transition-colors duration-200 rounded-full"
             >
               Blog
-            </a>
-            <a
+            </NavLink>
+            <NavLink
+              to="/contact"
               href="#contact"
               className="text-gray-700 hover:text-red-600 px-6 py-3 transition-colors duration-200 rounded-full"
             >
               Contact
-            </a>
-            <a
+            </NavLink>
+            <NavLink
+              to="/listing"
               href="#contact"
               className="text-gray-700 hover:text-red-600 px-6 py-3 transition-colors duration-200 rounded-full"
             >
               Listing
-            </a>
+            </NavLink>
           </nav>
         </div>
       )}
