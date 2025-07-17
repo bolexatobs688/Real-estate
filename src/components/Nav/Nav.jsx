@@ -6,7 +6,7 @@ const Nav = () => {
   const [showNav, setShowNav] = useState(false);
 
   return (
-    <div className="relative z-20">
+    <div className="relative z-50">
       {/* Menu Icon */}
       {!showNav && (
         <button className="p-6 cursor-pointer">
@@ -19,11 +19,12 @@ const Nav = () => {
         </button>
       )}
 
-      {/* Navigation Menu */}
+      {/* Fullscreen Navigation Panel */}
       {showNav && (
-        <div className="fixed inset-0 z-50 bg-white shadow-lg transition-transform duration-300 ease-in-out">
-          {/* Close Icon */}
-          <div className="flex justify-end p-6">
+        <div className="fixed  w-[600px] inset-0 bg-white z-50 transition duration-300 ease-in-out">
+          {/* Header: Title & Close Button */}
+          <div className="flex justify-between items-center p-6 border-b border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-800">Menu</h2>
             <button onClick={() => setShowNav(false)} aria-label="Close Menu">
               <img
                 src={assets.cross_icon}
@@ -34,32 +35,32 @@ const Nav = () => {
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-col items-start px-10 space-y-4 text-lg font-medium">
+          <nav className="flex flex-col px-8 pt-8 space-y-6 text-xl font-medium">
             <NavLink
               to="/about"
-              href="#about"
-              className="text-gray-700 hover:text-red-600 px-6 py-3 transition-colors duration-200 rounded-full"
+              className="text-gray-700 hover:text-red-600 transition-colors"
+              onClick={() => setShowNav(false)}
             >
               About
             </NavLink>
             <NavLink
               to="/blog"
-              href="#blog"
-              className="text-gray-700 hover:text-red-600 px-6 py-3 transition-colors duration-200 rounded-full"
+              className="text-gray-700 hover:text-red-600 transition-colors"
+              onClick={() => setShowNav(false)}
             >
               Blog
             </NavLink>
             <NavLink
               to="/contact"
-              href="#contact"
-              className="text-gray-700 hover:text-red-600 px-6 py-3 transition-colors duration-200 rounded-full"
+              className="text-gray-700 hover:text-red-600 transition-colors"
+              onClick={() => setShowNav(false)}
             >
               Contact
             </NavLink>
             <NavLink
-              to="/listing"
-              href="#contact"
-              className="text-gray-700 hover:text-red-600 px-6 py-3 transition-colors duration-200 rounded-full"
+              to="/productList"
+              className="text-gray-700 hover:text-red-600 transition-colors"
+              onClick={() => setShowNav(false)}
             >
               Listing
             </NavLink>
