@@ -21,11 +21,15 @@ const Nav = () => {
 
       {/* Fullscreen Navigation Panel */}
       {showNav && (
-        <div className="fixed  w-[600px] inset-0 bg-white z-50 transition duration-300 ease-in-out">
+        <div className="fixed inset-0 bg-white z-50 w-full max-w-[600px] transition duration-300 ease-in-out shadow-lg">
           {/* Header: Title & Close Button */}
           <div className="flex justify-between items-center p-6 border-b border-gray-200">
             <h2 className="text-2xl font-bold text-gray-800">Menu</h2>
-            <button onClick={() => setShowNav(false)} aria-label="Close Menu">
+            <button
+              onClick={() => setShowNav(false)}
+              aria-label="Close Menu"
+              className="focus:outline-none"
+            >
               <img
                 src={assets.cross_icon}
                 alt="Close Icon"
@@ -36,6 +40,13 @@ const Nav = () => {
 
           {/* Navigation Links */}
           <nav className="flex flex-col px-8 pt-8 space-y-6 text-xl font-medium">
+            <NavLink
+              to="/"
+              className="text-gray-700 hover:text-red-600 transition-colors"
+              onClick={() => setShowNav(false)}
+            >
+              Home
+            </NavLink>
             <NavLink
               to="/about"
               className="text-gray-700 hover:text-red-600 transition-colors"
