@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "../Nav/Nav";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo-png.png";
+import { assets } from "../../assets/assets";
 
 const Header = () => {
   return (
@@ -17,7 +17,7 @@ const Header = () => {
         {/* Logo (Zoom on Hover) */}
         <Link to="/" className="flex-1 flex justify-center">
           <img
-            src={logo}
+            src={assets.logo}
             className="w-24 md:w-32 transition-transform duration-300 hover:scale-105 object-contain py-2"
             alt="Logo"
           />

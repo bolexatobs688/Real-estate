@@ -1,5 +1,5 @@
 // src/components/ScrollToTop.jsx
-/*import { useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
@@ -7,7 +7,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
- }, [pathname]);
+  }, [pathname]);
 
   return null;
 };
