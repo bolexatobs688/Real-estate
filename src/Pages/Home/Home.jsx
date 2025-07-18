@@ -1,4 +1,4 @@
-// File: src/Pages/Home/Home.jsx (or wherever your Home component is)
+// File: src/Pages/Home/Home.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import Project from "../../components/Projects/Project";
@@ -8,45 +8,45 @@ import Footer from "../../components/footer/Footer";
 import About from "../../components/About/About";
 
 const Home = () => {
-  const categories = [
-    "Short Stays",
-    "Exclusive",
-    "Rent",
-    "Sale",
-    "Waterfront Plot",
-    "Commercial",
-  ];
-
   return (
     <div>
       {/* Hero Section */}
       <div
         className="min-h-screen bg-cover bg-center flex items-center w-full px-4 md:px-20 lg:px-32"
-        style={{ backgroundImage: "url(/header_img.png)" }}
+        style={{
+          backgroundImage: "url(/header_img.png)",
+        }}
         id="Header"
       >
-        <div className="container text-center mx-auto py-4 px-6 text-white">
-          <h2 className="text-5xl md:text-[50px] max-w-3xl font-semibold pt-20 mx-auto">
+        <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white">
+          <h2 className="text-5xl sm:text-6xl md:text-[50px] max-w-3xl font-semibold pt-20 mx-auto">
             Real Estate Different and Better
           </h2>
           <h2 className="text-xl md:text-[15px] max-w-3xl font-semibold pt-5 mx-auto">
             We will help find your place, invest and build wealth in Lagos
           </h2>
 
-          {/* Filter Buttons */}
+          {/* Filter Buttons (linked to productList with query) */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
-            {categories.map((cat) => (
+            {[
+              "Short Stays",
+              "Exclusive",
+              "Rent",
+              "Sale",
+              "Waterfront Plot",
+              "Commercial",
+            ].map((category) => (
               <Link
-                to={`/productList?category=${encodeURIComponent(cat)}`}
-                key={cat}
+                key={category}
+                to={`/productList?category=${encodeURIComponent(category)}`}
                 className="border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition"
               >
-                {cat}
+                {category}
               </Link>
             ))}
           </div>
 
-          {/* About Link */}
+          {/* Optional Link to About Page */}
           <div className="mt-8">
             <Link
               to="/about"
@@ -58,6 +58,7 @@ const Home = () => {
         </div>
       </div>
 
+      {/* Section Components */}
       <Project />
       <Properties />
       <About />

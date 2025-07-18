@@ -1,87 +1,235 @@
 // File: src/Pages/ProductList/ProductList.jsx
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 
-// Sample product data
 const products = [
   {
     id: 1,
     name: "Modern Sofa",
     price: "$499",
-    category: "Sale",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
-    description: "A stylish and comfortable modern sofa.",
+    category: "Rent",
+    image: "https://source.unsplash.com/featured/?sofa",
+    description: "Comfortable and modern sofa.",
   },
   {
     id: 2,
-    name: "Elegant Chair",
-    price: "$199",
-    category: "Rent",
-    image: "https://images.unsplash.com/photo-1567016549631-1fabc739b6c9",
-    description: "Sleek accent chair.",
+    name: "Luxury Villa",
+    price: "$5,000/mo",
+    category: "Exclusive",
+    image: "https://source.unsplash.com/featured/?villa",
+    description: "High-end villa with sea view.",
   },
   {
     id: 3,
-    name: "Smart Table",
-    price: "$299",
-    category: "Exclusive",
-    image: "https://images.unsplash.com/photo-1622495894387-0c8e7ed4ce20",
-    description: "Smart table with wireless charging.",
+    name: "Downtown Apartment",
+    price: "$1,200/mo",
+    category: "Rent",
+    image: "https://source.unsplash.com/featured/?apartment",
+    description: "In the heart of the city.",
   },
   {
     id: 4,
-    name: "Luxury Lamp",
-    price: "$89",
+    name: "Weekend Getaway",
+    price: "$300",
     category: "Short Stays",
-    image: "https://images.unsplash.com/photo-1616627562072-6cf29392f27c",
-    description: "Minimalist lamp.",
+    image: "https://source.unsplash.com/featured/?cabin",
+    description: "Peaceful cabin retreat.",
   },
   {
     id: 5,
-    name: "Bookshelf XL",
-    price: "$149",
-    category: "Commercial",
-    image: "https://images.unsplash.com/photo-1616628182502-7e3e54ff2357",
-    description: "Modern bookshelf.",
+    name: "Seaside Plot",
+    price: "$30,000",
+    category: "Waterfront Plot",
+    image: "https://source.unsplash.com/featured/?beach",
+    description: "Plot by the ocean.",
   },
   {
     id: 6,
-    name: "Queen Bed Frame",
-    price: "$599",
+    name: "Office Complex",
+    price: "$150,000",
+    category: "Commercial",
+    image: "https://source.unsplash.com/featured/?office",
+    description: "Spacious commercial space.",
+  },
+  {
+    id: 7,
+    name: "Bungalow",
+    price: "$75,000",
+    category: "Sale",
+    image: "https://source.unsplash.com/featured/?bungalow",
+    description: "Cozy family home.",
+  },
+  {
+    id: 8,
+    name: "Loft Apartment",
+    price: "$2,000/mo",
+    category: "Exclusive",
+    image: "https://source.unsplash.com/featured/?loft",
+    description: "Stylish and spacious loft.",
+  },
+  {
+    id: 9,
+    name: "Airbnb Retreat",
+    price: "$120/night",
+    category: "Short Stays",
+    image: "https://source.unsplash.com/featured/?airbnb",
+    description: "Perfect weekend getaway.",
+  },
+  {
+    id: 10,
+    name: "Penthouse Suite",
+    price: "$3,500/mo",
+    category: "Exclusive",
+    image: "https://source.unsplash.com/featured/?penthouse",
+    description: "Luxury in the sky.",
+  },
+  {
+    id: 11,
+    name: "Retail Shop",
+    price: "$90,000",
+    category: "Commercial",
+    image: "https://source.unsplash.com/featured/?store",
+    description: "Great location for business.",
+  },
+  {
+    id: 12,
+    name: "Suburban Home",
+    price: "$150,000",
+    category: "Sale",
+    image: "https://source.unsplash.com/featured/?house",
+    description: "Family-friendly neighborhood.",
+  },
+  {
+    id: 13,
+    name: "Studio Flat",
+    price: "$850/mo",
+    category: "Rent",
+    image: "https://source.unsplash.com/featured/?studio",
+    description: "Compact and efficient.",
+  },
+  {
+    id: 14,
+    name: "Island Property",
+    price: "$200,000",
     category: "Waterfront Plot",
-    image: "https://images.unsplash.com/photo-1601979031925-3ccdebd9fc62",
-    description: "Wooden bed frame.",
+    image: "https://source.unsplash.com/featured/?island",
+    description: "Tropical paradise plot.",
+  },
+  {
+    id: 15,
+    name: "Boutique Hotel Room",
+    price: "$250/night",
+    category: "Short Stays",
+    image: "https://source.unsplash.com/featured/?hotel",
+    description: "Elegance and comfort.",
+  },
+  {
+    id: 16,
+    name: "Duplex",
+    price: "$170,000",
+    category: "Sale",
+    image: "https://source.unsplash.com/featured/?duplex",
+    description: "Spacious duplex home.",
+  },
+  {
+    id: 17,
+    name: "Corporate Suite",
+    price: "$4,000/mo",
+    category: "Commercial",
+    image: "https://source.unsplash.com/featured/?corporate",
+    description: "High-end office suite.",
+  },
+  {
+    id: 18,
+    name: "Luxury Chalet",
+    price: "$600/night",
+    category: "Exclusive",
+    image: "https://source.unsplash.com/featured/?chalet",
+    description: "Mountain view luxury.",
+  },
+  {
+    id: 19,
+    name: "Rental Cabin",
+    price: "$140/night",
+    category: "Short Stays",
+    image: "https://source.unsplash.com/featured/?rental",
+    description: "Nature escape.",
+  },
+  {
+    id: 20,
+    name: "Affordable Condo",
+    price: "$90,000",
+    category: "Sale",
+    image: "https://source.unsplash.com/featured/?condo",
+    description: "Urban comfort.",
   },
 ];
 
 const ProductList = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const selectedCategory = queryParams.get("category");
+  const defaultCategory = queryParams.get("category") || "All";
 
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
+
+  const categories = [
+    "All",
+    "Rent",
+    "Short Stays",
+    "Exclusive",
+    "Sale",
+    "Waterfront Plot",
+    "Commercial",
+  ];
 
   useEffect(() => {
-    if (selectedCategory) {
-      const filtered = products.filter(
-        (product) => product.category === selectedCategory
-      );
-      setFilteredProducts(filtered);
-    } else {
-      setFilteredProducts(products);
-    }
-  }, [selectedCategory]);
+    setSelectedCategory(defaultCategory);
+  }, [defaultCategory]);
+
+  const filteredProducts = products.filter((product) => {
+    const matchName = product.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const matchCategory =
+      selectedCategory === "All" || product.category === selectedCategory;
+    return matchName && matchCategory;
+  });
 
   return (
     <div>
       <div className="min-h-screen px-4 py-10 bg-gray-100 md:px-20 lg:px-32">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8">
-          {selectedCategory ? `${selectedCategory} Listings` : "All Products"}
+        <h1 className="text-3xl font-bold text-gray-800 mb-6">
+          Shop All Products
         </h1>
-        {filteredProducts.length > 0 ? (
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {filteredProducts.map((product) => (
+
+        {/* Filter */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+          <input
+            type="text"
+            placeholder="Search products..."
+            className="w-full md:w-1/2 p-3 border border-gray-300 rounded"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <select
+            className="w-full md:w-1/4 p-3 border border-gray-300 rounded"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+          >
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Product Grid */}
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
               <Link to={`/product/${product.id}`} key={product.id}>
                 <div className="bg-white rounded-lg shadow hover:shadow-lg transition cursor-pointer">
                   <img
@@ -95,11 +243,13 @@ const ProductList = () => {
                   </div>
                 </div>
               </Link>
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-600">No products found for this category.</p>
-        )}
+            ))
+          ) : (
+            <p className="col-span-full text-center text-gray-500">
+              No products found.
+            </p>
+          )}
+        </div>
       </div>
       <Footer />
     </div>
