@@ -6,13 +6,13 @@ import Aboutpage from "./Pages/About/Aboutpage";
 import Contact from "./Pages/Contact/Contact";
 import ProductList from "./Pages/Product/ProductList";
 import Blog from "./Pages/Blog/Blog";
-import ScrollToTop from "./components/scrollToTop";
+// import ScrollToTop from "./components/scrollToTop";
 
 
 function App() {
   return (
     <div>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Header />
       <div className="pt-28">
         <Routes>
