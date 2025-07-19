@@ -19,13 +19,13 @@ const Home = () => {
         id="Header"
       >
         <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white">
-          {/* Updated H1 */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl max-w-3xl font-bold pt-20 mx-auto leading-tight">
+          {/* Updated H1 (Gold Text) */}
+          <h1 className="text-yellow-500 text-4xl sm:text-5xl md:text-6xl max-w-3xl font-bold pt-20 mx-auto leading-tight">
             Find, Buy, or Lease Properties with Confidence
           </h1>
 
-          {/* Updated H2 */}
-          <h2 className="text-lg md:text-xl max-w-3xl font-medium pt-5 mx-auto">
+          {/* Updated H2 (Gold Text) */}
+          <h2 className="text-yellow-500 text-lg md:text-xl max-w-3xl font-medium pt-5 mx-auto">
             At Client Point Properties, we simplify your real estate journey —
             from discovery to closing. Whether you're buying, selling, or
             leasing, our expert team is here to guide you every step of the way.
@@ -34,7 +34,7 @@ const Home = () => {
           {/* Primary CTA Button */}
           <div className="mt-8">
             <Link
-              to="/contact" // Update this route if your contact form lives elsewhere
+              to="/contact"
               className="inline-block bg-blue-600 px-6 py-3 rounded-full text-white font-semibold hover:bg-blue-700 transition"
             >
               🔘 Speak to a Property Advisor
