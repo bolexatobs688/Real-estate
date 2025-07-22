@@ -19,29 +19,41 @@ const Home = () => {
         id="Header"
       >
         <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32">
-          {/* Original H1 */}
-          <h1 className="text-5xl sm:text-6xl md:text-[50px] max-w-3xl font-semibold pt-20 mx-auto">
+          {/* H1 with gold color and white outline */}
+          <h1
+            className="text-5xl sm:text-6xl md:text-[50px] max-w-3xl font-semibold pt-20 mx-auto"
+            style={{
+              color: "#C9A041",
+              textShadow: "1px 1px 2px white",
+            }}
+          >
             Real Estate Different and Better
           </h1>
 
-          {/* Original H2 */}
-          <h2 className="text-xl md:text-[15px] max-w-3xl font-semibold pt-5 mx-auto">
+          {/* H2 with same gold and outline */}
+          <h2
+            className="text-xl md:text-[15px] max-w-3xl font-semibold pt-5 mx-auto"
+            style={{
+              color: "#C9A041",
+              textShadow: "1px 1px 2px white",
+            }}
+          >
             We will help find your place, invest and build wealth in Lagos
           </h2>
 
-          {/* ✅ Styled CTA Button */}
+          {/* CTA Button */}
           <div className="mt-8">
             <Link
               to="/contact"
               className="inline-block px-6 py-3 rounded-full font-semibold 
-                bg-[#152515] text-white border-2 border-[#C9A041] 
-                hover:bg-[#1f3b1f] hover:border-[#d9aa45] transition"
+          bg-[#152515] text-white border-2 border-[#C9A041] 
+          hover:bg-[#1f3b1f] hover:border-[#d9aa45] transition"
             >
               🔘 Speak to a Property Advisor
             </Link>
           </div>
 
-          {/* Filter Buttons (white text) */}
+          {/* Filter Buttons - Styled like CTA */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
             {[
               "Short Stays",
@@ -54,7 +66,9 @@ const Home = () => {
               <Link
                 key={category}
                 to={`/productList?category=${encodeURIComponent(category)}`}
-                className="border border-white text-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition"
+                className="inline-block px-6 py-3 rounded-full font-semibold 
+            bg-[#152515] text-white border-2 border-[#C9A041] 
+            hover:bg-[#1f3b1f] hover:border-[#d9aa45] transition"
               >
                 {category}
               </Link>
