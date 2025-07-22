@@ -8,7 +8,6 @@ import ProductList from "./Pages/Product/ProductList";
 import Blog from "./Pages/Blog/Blog";
 import ScrollToTop from "./components/scroll";
 
-
 function App() {
   return (
     <div>

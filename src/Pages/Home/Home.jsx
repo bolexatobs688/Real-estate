@@ -9,7 +9,7 @@ import About from "../../components/About/About";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-[#F2F2F2] text-white">
       {/* Hero Section */}
       <div
         className="min-h-screen bg-cover bg-center flex items-center w-full px-4 md:px-20 lg:px-32"
@@ -18,30 +18,30 @@ const Home = () => {
         }}
         id="Header"
       >
-        <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white">
-          {/* Updated H1 (Gold Text) */}
-          <h1 className="text-yellow-500 text-4xl sm:text-5xl md:text-6xl max-w-3xl font-bold pt-20 mx-auto leading-tight">
-            Find, Buy, or Lease Properties with Confidence
+        <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32">
+          {/* Original H1 */}
+          <h1 className="text-5xl sm:text-6xl md:text-[50px] max-w-3xl font-semibold pt-20 mx-auto">
+            Real Estate Different and Better
           </h1>
 
-          {/* Updated H2 (Gold Text) */}
-          <h2 className="text-yellow-500 text-lg md:text-xl max-w-3xl font-medium pt-5 mx-auto">
-            At Client Point Properties, we simplify your real estate journey —
-            from discovery to closing. Whether you're buying, selling, or
-            leasing, our expert team is here to guide you every step of the way.
+          {/* Original H2 */}
+          <h2 className="text-xl md:text-[15px] max-w-3xl font-semibold pt-5 mx-auto">
+            We will help find your place, invest and build wealth in Lagos
           </h2>
 
-          {/* Primary CTA Button */}
+          {/* ✅ Styled CTA Button */}
           <div className="mt-8">
             <Link
               to="/contact"
-              className="inline-block bg-blue-600 px-6 py-3 rounded-full text-white font-semibold hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 rounded-full font-semibold 
+                bg-[#152515] text-white border-2 border-[#C9A041] 
+                hover:bg-[#1f3b1f] hover:border-[#d9aa45] transition"
             >
               🔘 Speak to a Property Advisor
             </Link>
           </div>
 
-          {/* Filter Buttons */}
+          {/* Filter Buttons (white text) */}
           <div className="flex flex-wrap justify-center gap-4 mt-10">
             {[
               "Short Stays",
@@ -54,7 +54,7 @@ const Home = () => {
               <Link
                 key={category}
                 to={`/productList?category=${encodeURIComponent(category)}`}
-                className="border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition"
+                className="border border-white text-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition"
               >
                 {category}
               </Link>
@@ -65,7 +65,7 @@ const Home = () => {
           <div className="mt-8">
             <Link
               to="/about"
-              className="inline-block underline hover:text-blue-300 transition"
+              className="inline-block underline text-white hover:text-[#C9A041] transition"
             >
               Learn More About Us →
             </Link>
