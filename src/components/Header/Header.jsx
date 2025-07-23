@@ -12,24 +12,20 @@ const Header = () => {
     >
       {/* Header Layout */}
       <div className="flex justify-between items-center h-full">
-        {/* Navigation Toggle */}
-        <div>
-          <Nav />
-        </div>
-
-        {/* Logo (Smaller + Zoom on Hover) */}
-        <Link to="/" className="flex-1 flex justify-center">
+        {/* Logo on the Left */}
+        <Link to="/" className="flex items-center">
           <img
             src="Client_black_Logo png.png"
-            className="w-8 md:w-24 transition-transform duration-300 hover:scale-105 object-contain py-2"
+            className="w-8 md:w-20 transition-transform duration-300 hover:scale-105 object-contain py-2"
             alt="Logo"
           />
         </Link>
 
-        {/* Right Side Icon linked to Contact Page */}
-        <div className="flex items-center space-x-2 text-white">
+        {/* Nav + User Icon on the Right */}
+        <div className="flex items-center space-x-6 text-white">
+          <Nav />
           <Link to="/contact">
-            <FaUser className="w-5 h-5 mr-10 cursor-pointer hover:text-[#C9A041]" />
+            <FaUser className="w-6 h-6 cursor-pointer hover:text-[#C9A041] transition duration-200" />
           </Link>
         </div>
       </div>

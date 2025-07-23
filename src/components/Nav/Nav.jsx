@@ -19,9 +19,9 @@ const Nav = () => {
         </button>
       )}
 
-      {/* Fullscreen Navigation Panel */}
+      {/* Right Side Navigation Panel (NO overlay) */}
       {showNav && (
-        <div className="fixed inset-0 bg-white z-50 w-full max-w-[600px] transition duration-300 ease-in-out shadow-lg">
+        <div className="fixed top-0 right-0 h-full bg-white z-50 w-[80%] max-w-sm shadow-lg transition-transform duration-300 ease-in-out">
           {/* Header: Title & Close Button */}
           <div className="flex justify-between items-center p-6 border-b border-gray-200">
             <h2 className="text-2xl font-bold text-gray-800">Menu</h2>
