@@ -2,11 +2,12 @@ import React from "react";
 import Nav from "../Nav/Nav";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { assets } from "../../assets/assets";
 
 const Header = () => {
   return (
     <div
-      className="fixed top-0 left-0 w-full shadow-md h-0 px-4 z-50 md:px-20 lg:px-32"
+      className="fixed top-0 left-0 w-full shadow-md h-30 px-4 z-50 md:px-20 lg:px-32"
       style={{ backgroundColor: "#152515" }}
     >
       {/* Header Layout */}
@@ -15,7 +16,7 @@ const Header = () => {
         <Link to="/" className="flex items-center">
           <img
             src="Client_black_Logo png.png"
-            className="w-17 sm:w-24 md:w-24 transition-transform duration-300 hover:scale-105 object-contain py-2"
+            className="w-8 md:w-20 sm:w-40 transition-transform duration-300 hover:scale-105 object-contain py-2"
             alt="Logo"
           />
         </Link>
