@@ -1,19 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { assets } from "../../assets/assets";
 import Footer from "../../components/footer/Footer";
+
+const Watermark = () => (
+  <img
+    src="Client_black_Logo png.png"
+    alt="Watermark Logo"
+    className="absolute bottom-4 left-4 opacity-10 w-32 h-32 object-contain z-0 pointer-events-none"
+  />
+);
 
 const Aboutpage = () => {
   return (
     <div>
+      {/* Hero Section */}
       <div
-        className="min-h-screen bg-cover bg-center flex items-center overflow-hidden w-full px-4 md:px-20 lg:px-32"
-        style={{
-          backgroundImage: "url(/header_img.png)",
-        }}
+        className="relative min-h-screen bg-cover bg-center flex items-center overflow-hidden w-full px-4 md:px-20 lg:px-32"
+        style={{ backgroundImage: "url(/header_img.png)" }}
         id="Header"
       >
-        <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32">
+        <Watermark />
+        <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 z-10 relative">
           <h2 className="text-3xl md:text-4xl font-bold text-[#C9A041] mb-4 pt-20">
             Our Vision
           </h2>
@@ -25,20 +32,19 @@ const Aboutpage = () => {
         </div>
       </div>
 
-      <div className="bg-[#152515] py-16 px-4 md:px-20 lg:px-32">
+      {/* Our Mission Section (No watermark here) */}
+      <div className="bg-[#152515] py-20 px-4 md:px-20 lg:px-32">
         <div className="flex flex-col md:flex-row-reverse items-center gap-10">
-          {/* Right Side Image */}
           <div className="w-full md:w-1/2">
             <img
               src="/build2_img.jpeg"
               alt="Our Mission"
-              className="w-full h-auto rounded-lg shadow-lg object-cover"
+              className="w-full h-[500px] rounded-lg shadow-lg object-cover"
             />
           </div>
 
-          {/* Left Side Text */}
           <div className="w-full md:w-1/2">
-            <h2 className="text-3xl font-bold text-[#C9A041] mb-4">
+            <h2 className="text-4xl font-bold text-[#C9A041] mb-4">
               Our Mission
             </h2>
             <p className="text-white text-lg leading-relaxed">
@@ -49,23 +55,16 @@ const Aboutpage = () => {
           </div>
         </div>
       </div>
-      <section className="relative bg-[#152515] text-white py-20 px-6 md:px-20 lg:px-32 overflow-hidden">
-        {/* Watermark Background Logo - Smaller */}
-        <img
-          src="/logo_img.png"
-          alt="Hands Holding Mark Sign"
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-               opacity-5 w-60 h-60 object-contain z-0 pointer-events-none"
-        />
 
-        {/* Content Overlay */}
+      {/* Core Values Section */}
+      <section className="relative bg-[#152515] text-white py-20 px-6 md:px-20 lg:px-32 overflow-hidden">
+        <Watermark />
         <div className="relative z-10">
           <h2 className="text-4xl font-bold text-center text-[#C9A041] mb-16">
             Our Core Values
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-            {/* Left Column */}
             <div className="flex flex-col gap-12 text-right">
               <div>
                 <h3 className="text-2xl font-semibold text-[#C9A041] mb-2">
@@ -87,10 +86,8 @@ const Aboutpage = () => {
               </div>
             </div>
 
-            {/* Center Spacer */}
             <div className="hidden md:block" />
 
-            {/* Right Column */}
             <div className="flex flex-col gap-12 text-left">
               <div>
                 <h3 className="text-2xl font-semibold text-[#C9A041] mb-2">
@@ -114,66 +111,21 @@ const Aboutpage = () => {
         </div>
       </section>
 
-      <section className="bg-[#152515] text-white py-16 px-6 md:px-20 lg:px-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Side */}
-          <div className="flex flex-col items-center gap-6">
-            {/* Top Gold Bar with Text */}
-            <div className="w-full bg-[#C9A041] py-3 text-center rounded-t-lg">
-              <p className="text-black font-semibold text-lg uppercase">
-                Thank You
-              </p>
-            </div>
+      {/* About Company Section */}
+      <div className="relative w-full bg-[#152515] text-white py-16 md:px-20 lg:px-32">
+        <Watermark />
+        <h2 className="text-4xl font-bold text-center text-[#C9A041] mb-12">
+          About Our Company
+        </h2>
 
-            {/* Center Image */}
-            <img
-              src="/our mission.jpeg" // Replace with your image path
-              alt="Thank You"
-              className="w-full h-auto object-contain max-w-sm"
-            />
-
-            {/* Bottom Gold Bar without Text */}
-            <div className="w-full bg-[#C9A041] h-8 rounded-b-lg" />
-          </div>
-
-          {/* Right Side */}
-          <div className="flex flex-col gap-6">
-            {/* Top Line */}
-            {/* Top Line */}
-            <div className="h-1 w-60 bg-[#C9A041]" />
-
-            {/* Contact Info */}
-            <h2 className="text-3xl font-bold text-[#C9A041]">Get in Touch</h2>
-            <div className="space-y-4 text-white text-lg">
-              <p>
-                📞 Call:{" "}
-                <span className="text-[#C9A041]">+234 801 234 5678</span>
-              </p>
-              <p>
-                ✉️ Email:{" "}
-                <span className="text-[#C9A041]">info@clientpoint.ng</span>
-              </p>
-              <p>
-                🌐 Website:{" "}
-                <span className="text-[#C9A041]">www.clientpoint.ng</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="flex flex-col items-center justify-center w-full bg-[#152515] text-white py-14 md:px-20 lg:px-32">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
-          {/* Image */}
           <img
             src="/background_img.jpeg"
             alt="About Client Point"
-            className="w-full sm:w-1/2 max-w-lg rounded-lg"
+            className="w-full sm:w-1/2 max-w-lg h-[500px] object-cover rounded-lg shadow-lg"
           />
 
-          {/* Content */}
           <div className="flex flex-col items-center md:items-start max-w-xl">
-            {/* Stats */}
             <div className="grid grid-cols-2 gap-6 md:gap-10 w-full mb-8">
               <div>
                 <p className="text-4xl font-semibold text-[#C9A041]">10+</p>
@@ -193,7 +145,6 @@ const Aboutpage = () => {
               </div>
             </div>
 
-            {/* About Company Text */}
             <p className="text-white leading-relaxed">
               Client Point Properties is a full-service real estate brokerage
               firm dedicated to helping individuals and organizations navigate
@@ -210,12 +161,11 @@ const Aboutpage = () => {
               transaction a partnership built on trust, integrity, and results.
             </p>
 
-            {/* CTA Button */}
             <Link
               to="/contact"
               className="mt-8 inline-block px-6 py-3 rounded-full font-semibold 
-              bg-[#152515] text-white border-2 border-[#C9A041] 
-              hover:bg-[#1f3b1f] hover:border-[#d9aa45] transition"
+                bg-[#152515] text-white border-2 border-[#C9A041] 
+                hover:bg-[#1f3b1f] hover:border-[#d9aa45] transition"
             >
               Learn More
             </Link>
@@ -223,123 +173,137 @@ const Aboutpage = () => {
         </div>
       </div>
 
-      <div className="container mx-auto flex flex-col md:flex-row justify-between gap-6 px-4 md:px-20 lg:px-32">
-        <section className="bg-[#152515] text-white py-16 px-6 md:px-20 lg:px-32">
+      {/* Why Choose Us Section */}
+      <div className="relative container mx-auto flex flex-col md:flex-row justify-between gap-6 px-4 md:px-20 lg:px-32">
+        <Watermark />
+        <section className="bg-[#152515] text-white py-16 px-6 md:px-20 lg:px-32 w-full">
           <h2 className="text-4xl font-bold text-center mb-12">
             Why Choose Client Point Properties
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Box 1 */}
-            <div className="flex flex-col gap-2">
+            <div>
               <h3 className="text-xl font-semibold">
                 ✅ Client-Centric Approach
               </h3>
               <p>
-                We listen, we understand, and we deliver solutions tailored to
-                your unique real estate needs.
+                We listen, understand, and tailor real estate solutions for your
+                needs.
               </p>
             </div>
-
-            {/* Box 2 */}
-            <div className="flex flex-col gap-2">
+            <div>
               <h3 className="text-xl font-semibold">
                 ✅ Professional Expertise
               </h3>
               <p>
-                Our team is composed of experienced brokers, property
-                consultants, and valuation experts committed to excellence.
+                Our team brings years of experience and deep market insight to
+                every deal.
               </p>
             </div>
-
-            {/* Box 3 */}
-            <div className="flex flex-col gap-2">
+            <div>
               <h3 className="text-xl font-semibold">
                 ✅ Maximum Market Visibility
               </h3>
               <p>
-                We leverage both digital platforms and traditional marketing to
-                ensure your property reaches the right audience.
+                Your property gets optimal exposure across all marketing
+                platforms.
               </p>
             </div>
-
-            {/* Box 4 */}
-            <div className="flex flex-col gap-2">
+            <div>
               <h3 className="text-xl font-semibold">
                 ✅ Transparency & Efficiency
               </h3>
               <p>
-                We simplify the process, maintain open communication, and
-                provide updates every step of the way.
+                We ensure smooth transactions with clear, constant
+                communication.
               </p>
             </div>
           </div>
         </section>
       </div>
-      <section className="bg-[#152515] text-white py-16 px-6 md:px-20 lg:px-32">
+
+      {/* Core Services */}
+      <section className="relative bg-[#152515] text-white py-16 px-6 md:px-20 lg:px-32">
+        <Watermark />
         <h2 className="text-4xl font-bold text-center mb-12">
           Our Core Services
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Service 1 */}
-          <div className="flex flex-col gap-2">
+          <div>
             <h3 className="text-xl font-semibold text-[#C9A041]">
               Property Valuation & Investment Advisory
             </h3>
-            <p>
-              Providing accurate property valuation and guiding investment
-              decisions with clarity and confidence.
-            </p>
+            <p>Accurate valuation and data-driven investment guidance.</p>
           </div>
-
-          {/* Service 2 */}
-          <div className="flex flex-col gap-2">
+          <div>
             <h3 className="text-xl font-semibold text-[#C9A041]">
               Property & Facility Management
             </h3>
-            <p>
-              Ensuring that your assets are well-managed, maintained, and
-              delivering long-term returns.
-            </p>
+            <p>Long-term care and optimization of your assets.</p>
           </div>
-
-          {/* Service 3 */}
-          <div className="flex flex-col gap-2">
+          <div>
             <h3 className="text-xl font-semibold text-[#C9A041]">
               Property Sales & Leasing
             </h3>
-            <p>
-              Connecting buyers and tenants with the right properties while
-              maximizing value for owners.
-            </p>
+            <p>Maximize value whether buying, selling, or renting.</p>
           </div>
-
-          {/* Service 4 */}
-          <div className="flex flex-col gap-2">
+          <div>
             <h3 className="text-xl font-semibold text-[#C9A041]">
               Real Estate Brokerage
             </h3>
-            <p>
-              Expert representation in property transactions, whether you're
-              buying, selling, or renting.
-            </p>
+            <p>Expert representation for stress-free deals.</p>
           </div>
-
-          {/* Service 5 */}
-          <div className="flex flex-col gap-2 md:col-span-2">
+          <div className="md:col-span-2">
             <h3 className="text-xl font-semibold text-[#C9A041]">
               Joint Venture Advisory
             </h3>
-            <p>
-              Facilitating strategic collaborations between landowners,
-              investors, and developers.
-            </p>
+            <p>We facilitate strategic partnerships between stakeholders.</p>
           </div>
         </div>
       </section>
 
-      {/* ✅ Back to Home Link */}
+      {/* Thank You Section (No watermark) */}
+      <section className="bg-[#152515] text-white py-28 px-6 md:px-20 lg:px-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+          <div className="flex flex-col items-center gap-8 w-full">
+            <div className="w-full bg-[#C9A041] py-6 text-center rounded-t-lg">
+              <p className="text-black font-bold text-2xl uppercase">
+                Thank You
+              </p>
+            </div>
+
+            <img
+              src="/our mission.jpeg"
+              alt="Thank You"
+              className="w-full h-[450px] object-cover max-w-3xl rounded-lg shadow-lg"
+            />
+
+            <div className="w-full bg-[#C9A041] h-10 rounded-b-lg" />
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <div className="h-1 w-72 bg-[#C9A041]" />
+            <h2 className="text-4xl font-bold text-[#C9A041]">Get in Touch</h2>
+            <div className="space-y-6 text-white text-lg">
+              <p>
+                📞 Call:{" "}
+                <span className="text-[#C9A041]">+234 801 234 5678</span>
+              </p>
+              <p>
+                ✉️ Email:{" "}
+                <span className="text-[#C9A041]">info@clientpoint.ng</span>
+              </p>
+              <p>
+                🌐 Website:{" "}
+                <span className="text-[#C9A041]">www.clientpoint.ng</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Back to Home */}
       <div className="text-center my-12">
         <Link
           to="/"
@@ -349,9 +313,8 @@ const Aboutpage = () => {
         </Link>
       </div>
 
-      <div>
-        <Footer />
-      </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

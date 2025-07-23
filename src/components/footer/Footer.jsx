@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between items-start gap-10">
         {/* Logo + Description */}
         <div className="flex flex-col gap-4 max-w-sm">
-          <img src={assets.logo} alt="Logo" className="w-32" />
+          <img src="Client_black_Logo png.png" alt="Logo" className="w-25" />
           <p>
             Client Point Properties is committed to helping individuals and
             businesses achieve real estate success through expertise,

@@ -17,18 +17,20 @@ const Header = () => {
           <Nav />
         </div>
 
-        {/* Logo (Zoom on Hover) */}
+        {/* Logo (Smaller + Zoom on Hover) */}
         <Link to="/" className="flex-1 flex justify-center">
           <img
-            src={assets.logo}
-            className="w-24 md:w-32 transition-transform duration-300 hover:scale-105 object-contain py-2"
+            src="Client_black_Logo png.png"
+            className="w-8 md:w-24 transition-transform duration-300 hover:scale-105 object-contain py-2"
             alt="Logo"
           />
         </Link>
 
-        {/* Right Side Icon */}
+        {/* Right Side Icon linked to Contact Page */}
         <div className="flex items-center space-x-2 text-white">
-          <FaUser className="w-5 h-5 mr-10" />
+          <Link to="/contact">
+            <FaUser className="w-5 h-5 mr-10 cursor-pointer hover:text-[#C9A041]" />
+          </Link>
         </div>
       </div>
     </div>
