@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ Import Link
 import { assets } from "../../assets/assets";
 
 const About = () => {
@@ -47,12 +48,15 @@ const About = () => {
             estate market with confidence. We specialize in the sales, leasing,
             and acquisition of premium residential and commercial properties, as
             well as investment advisory, joint ventures, and property
-            consulting..
+            consulting.
           </p>
 
-          <button className="bg-[#C9A041] text-white px-4 py-2 rounded hover:bg-[#b48a35] transition">
-            Learn More
-          </button>
+          {/* ✅ Use Link to route to Aboutpage */}
+          <Link to="/aboutpage">
+            <button className="bg-[#C9A041] text-white px-4 py-2 rounded hover:bg-[#b48a35] transition">
+              Learn More
+            </button>
+          </Link>
         </div>
       </div>
     </div>
