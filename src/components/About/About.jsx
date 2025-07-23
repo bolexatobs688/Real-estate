@@ -41,11 +41,13 @@ const About = () => {
             </div>
           </div>
 
-          <p className="my-10 max-w-lg text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste maxime
-            minima non illo nemo cum quam dolore laborum itaque atque, eos
-            nulla. Doloremque reiciendis a accusantium reprehenderit sapiente
-            velit dolor.
+          <p className="my-10 max-w-lg text-black">
+            Client Point Properties is a full-service real estate brokerage firm
+            dedicated to helping individuals and organizations navigate the real
+            estate market with confidence. We specialize in the sales, leasing,
+            and acquisition of premium residential and commercial properties, as
+            well as investment advisory, joint ventures, and property
+            consulting..
           </p>
 
           <button className="bg-[#C9A041] text-white px-4 py-2 rounded hover:bg-[#b48a35] transition">
