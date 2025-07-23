@@ -30,7 +30,7 @@ const Aboutpage = () => {
           {/* Right Side Image */}
           <div className="w-full md:w-1/2">
             <img
-              src={assets.brand_img}
+              src="/build2_img.jpeg"
               alt="Our Mission"
               className="w-full h-auto rounded-lg shadow-lg object-cover"
             />
@@ -49,12 +49,124 @@ const Aboutpage = () => {
           </div>
         </div>
       </div>
+      <section className="relative bg-[#152515] text-white py-20 px-6 md:px-20 lg:px-32 overflow-hidden">
+        {/* Watermark Background Logo - Smaller */}
+        <img
+          src="/logo_img.png"
+          alt="Hands Holding Mark Sign"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+               opacity-5 w-60 h-60 object-contain z-0 pointer-events-none"
+        />
+
+        {/* Content Overlay */}
+        <div className="relative z-10">
+          <h2 className="text-4xl font-bold text-center text-[#C9A041] mb-16">
+            Our Core Values
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+            {/* Left Column */}
+            <div className="flex flex-col gap-12 text-right">
+              <div>
+                <h3 className="text-2xl font-semibold text-[#C9A041] mb-2">
+                  INTEGRITY
+                </h3>
+                <p>
+                  Utilizing modern tools, market intelligence, and technology to
+                  deliver smart property solutions.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-[#C9A041] mb-2">
+                  COLLABORATIONS
+                </h3>
+                <p>
+                  Working hand-in-hand with clients and partners to achieve
+                  shared success.
+                </p>
+              </div>
+            </div>
+
+            {/* Center Spacer */}
+            <div className="hidden md:block" />
+
+            {/* Right Column */}
+            <div className="flex flex-col gap-12 text-left">
+              <div>
+                <h3 className="text-2xl font-semibold text-[#C9A041] mb-2">
+                  INNOVATIONS
+                </h3>
+                <p>
+                  We build trust through honesty, fairness, and transparency.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-[#C9A041] mb-2">
+                  EXCELLENCE
+                </h3>
+                <p>
+                  Committed to delivering exceptional results in every
+                  transaction, big or small.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#152515] text-white py-16 px-6 md:px-20 lg:px-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left Side */}
+          <div className="flex flex-col items-center gap-6">
+            {/* Top Gold Bar with Text */}
+            <div className="w-full bg-[#C9A041] py-3 text-center rounded-t-lg">
+              <p className="text-black font-semibold text-lg uppercase">
+                Thank You
+              </p>
+            </div>
+
+            {/* Center Image */}
+            <img
+              src="/our mission.jpeg" // Replace with your image path
+              alt="Thank You"
+              className="w-full h-auto object-contain max-w-sm"
+            />
+
+            {/* Bottom Gold Bar without Text */}
+            <div className="w-full bg-[#C9A041] h-8 rounded-b-lg" />
+          </div>
+
+          {/* Right Side */}
+          <div className="flex flex-col gap-6">
+            {/* Top Line */}
+            {/* Top Line */}
+            <div className="h-1 w-60 bg-[#C9A041]" />
+
+            {/* Contact Info */}
+            <h2 className="text-3xl font-bold text-[#C9A041]">Get in Touch</h2>
+            <div className="space-y-4 text-white text-lg">
+              <p>
+                📞 Call:{" "}
+                <span className="text-[#C9A041]">+234 801 234 5678</span>
+              </p>
+              <p>
+                ✉️ Email:{" "}
+                <span className="text-[#C9A041]">info@clientpoint.ng</span>
+              </p>
+              <p>
+                🌐 Website:{" "}
+                <span className="text-[#C9A041]">www.clientpoint.ng</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="flex flex-col items-center justify-center w-full bg-[#152515] text-white py-14 md:px-20 lg:px-32">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
           {/* Image */}
           <img
-            src={assets.brand_img}
+            src="/background_img.jpeg"
             alt="About Client Point"
             className="w-full sm:w-1/2 max-w-lg rounded-lg"
           />
