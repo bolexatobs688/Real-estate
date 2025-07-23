@@ -16,7 +16,7 @@ const Header = () => {
         <Link to="/" className="flex items-center">
           <img
             src="Client_black_Logo png.png"
-            className="w-8 md:w-20 sm:w-40 transition-transform duration-300 hover:scale-105 object-contain py-2"
+            className="w-24 md:w-20 sm:w-28 transition-transform duration-300 hover:scale-105 object-contain py-2"
             alt="Logo"
           />
         </Link>
